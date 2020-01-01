@@ -1,0 +1,8 @@
+.ampy
+.venv/
+.vscode/
+binaries/
+sonoff/
+config.json
+Pipfile
+

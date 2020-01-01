@@ -1,0 +1,6 @@
+[submodule "lib-python"]
+	path = lib-python
+	url = git@github.com:blynkkk/lib-python.git
+[submodule "micropython"]
+	path = micropython
+	url = git@github.com:micropython/micropython.git
