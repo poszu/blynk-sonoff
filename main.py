@@ -70,7 +70,6 @@ def runLoop(blynk):
             blynk.run()
         except Exception as exc:
             log_exception(exc, "Exception in blynk.run()")
-            blynk = setup(BLYNK_AUTH)
         try:
             machine.idle()
         except Exception as exc:

@@ -1,17 +1,17 @@
 mpy-cross:
 	make -C micropython/mpy-cross
 
-BLYNKLIB := lib-python/blynklib.py
+BLYNKLIB := lib-python/blynklib_mp.py
 BLYNKTIMER := lib-python/blynktimer.py
-FROZEN_DIR := micropython/ports/esp8266/modules/
+FROZEN_DIR := micropython/ports/esp8266/modules
 
 BOARD_PORT ?= /dev/ttyUSB0
 ESPTOOL_ARGS ?= --port=${BOARD_PORT} --baud 460800
 FLASH_ARGS ?= -fm dout --flash_size=detect 0
 
 micropython: mpy-cross
-	cp ${BLYNKLIB} ${FROZEN_DIR}
-	cp ${BLYNKTIMER} ${FROZEN_DIR}
+	cp ${BLYNKLIB} ${FROZEN_DIR}/blynklib.py
+	cp ${BLYNKTIMER} ${FROZEN_DIR}/
 	make -C micropython/ports/esp8266
 
 erase_flash:
